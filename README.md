@@ -8,9 +8,11 @@ Oh, besides that, I’m often asked another question: Why am I so stubborn about
 ## III.Into detail  
 
 
-<span style="font-size:100px;">I Still Working on it, detailed analysis will be available soon!</span>
+<span style="font-size:100px;">I Still Working on it, detailed analysis will be available soon!</span>  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5ffeb23e-5e1b-41ba-8a09-935af73f97cf">
+</p>
 
-![image](https://github.com/user-attachments/assets/5ffeb23e-5e1b-41ba-8a09-935af73f97cf)  
 <p align="center"> 
 <span style="font-size:30px;">Full-Chain!</span>
 </p>  
