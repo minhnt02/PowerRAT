@@ -14,3 +14,11 @@ Oh, besides that, I’m often asked another question: Why am I so stubborn about
 <p align="center"> 
 <span style="font-size:30px;">Full-Chain!</span>
 </p>
+
+## III. References
+I would like to thank the authors of the following articles for providing me with the inspiration to carry out this project:
++)https://rewterz.com/articles/how-i-bypassed-local-group-policy-and-domain-group-policy-powershell-restrictions  
++)PEN-300: Advanced Penetration Testing Certification  
+
+
+
