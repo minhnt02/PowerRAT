@@ -13,8 +13,10 @@ Oh, besides that, I’m often asked another question: Why am I so stubborn about
 ![image](https://github.com/user-attachments/assets/5ffeb23e-5e1b-41ba-8a09-935af73f97cf)  
 <p align="center"> 
 <span style="font-size:30px;">Full-Chain!</span>
-</p>
+</p>  
+
 ## III.Demo  
+
 ## IV.References  
 I would like to thank the authors of the following articles for providing me with the inspiration to carry out this project:
 +)https://rewterz.com/articles/how-i-bypassed-local-group-policy-and-domain-group-policy-powershell-restrictions  
