@@ -1,0 +1,9 @@
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\bin\x64\Release\PowerRAT.exe.config
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\bin\x64\Release\PowerRAT.exe
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\bin\x64\Release\PowerRAT.pdb
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\bin\x64\Release\System.Management.Automation.dll
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\obj\x64\Release\PowerRAT.csproj.AssemblyReference.cache
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\obj\x64\Release\PowerRAT.csproj.CoreCompileInputs.cache
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\obj\x64\Release\PowerRAT.csproj.Up2Date
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\obj\x64\Release\PowerRAT.exe
+C:\Users\minhnt79\Desktop\Anti-AV\PowerRAT\obj\x64\Release\PowerRAT.pdb
