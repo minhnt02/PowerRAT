@@ -4,9 +4,38 @@ As mentioned in the topic "My-Phishing-Case-2", I encountered a situation where 
 Oh, besides that, I’m often asked another question: Why am I so stubborn about using PowerShell? - Because we like it. We feel comfortable working with PowerShell. Besides, it's simply too powerful to ignore. Moreover, even in post-exploitation stages after gaining access to a system, finding a way to run PowerShell should be a top priority.  
 
 ## II.Into detail  
+PowerShell.exe is essentially a GUI (graphical user interface) or CLI (command-line interface) application responsible for handling user input and displaying output. The actual execution of PowerShell commands does not take place within PowerShell.exe but rather in a .NET library called System.Management.Automation.dll - a dynamic-link library(DLL) that manages the core functionalities of PowerShell.When you run PowerShell.exe, it invokes System.Management.Automation.dll to create a runspace. A runspace, in this context, refers to an execution environment where PowerShell commands are executed.  
 
+In summary, the steps involved when a PowerShell command is executed include:  
+&nbsp;&nbsp;1.Receive input command ------------> Handled by PowerShell.exe  
+&nbsp;&nbsp;2.Create Runspace ------------> Handled by PowerShell.exe  
+&nbsp;&nbsp;3.Process Pipeline & Execute command ------------> Handled by System.Management.Automation.dll  
 
-<span style="font-size:100px;">I Still Working on it, detailed analysis will be available soon!</span>  
+System.Management.Automation.dll is written in C#, so we can use its classes and properties by creating an object from the required class and utilizing the corresponding functionalities.The classes and functions we need to use include:  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b78370d7-3552-4efb-b6a2-c82fa23416fd">
+</p>
+<p align="center"> 
+<span style="font-size:30px;">PowerShell class and AddScript method</span>
+</p>  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5fdbfb67-e9f1-4f71-a318-e38e4334ab2f">
+</p>
+<p align="center"> 
+<span style="font-size:30px;">Create method</span>
+</p>  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c524d72b-d6e4-45ed-b02d-3976db7f8d9e">
+</p>
+<p align="center"> 
+<span style="font-size:30px;">Invoke method</span>
+</p>  
+
+The tasks of these three methods are quite basic: Create() is used to create a new PowerShell instance while also creating a Runspace (by default). AddScript() passes the input command, and Invoke() executes it.  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0678d083-7ee7-4a48-8edc-58de9a7ba63c">
+</p>
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5ffeb23e-5e1b-41ba-8a09-935af73f97cf">
 </p>
