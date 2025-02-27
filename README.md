@@ -31,15 +31,29 @@ System.Management.Automation.dll is written in C#, so we can use its classes and
 <span style="font-size:30px;">Invoke method</span>
 </p>  
 
-The tasks of these three methods are quite basic: Create() is used to create a new PowerShell instance while also creating a Runspace (by default). AddScript() passes the input command, and Invoke() executes it.  
+The tasks of these three methods are quite basic: Create() is used to create a new PowerShell instance while also creating a Runspace (by default). AddScript() passes the input command, and Invoke() executes it.Alright, converting it to C#, we will code it similarly as follows:  
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0678d083-7ee7-4a48-8edc-58de9a7ba63c">
 </p>
 
+Thus, we have met all three conditions to run PowerShell as initially mentioned. Now, we will use this code snippet to execute the PowerShell command and establish a Command-Control channel. To keep it simple, we will follow exactly what was done in "My-phishing-case-1" (or you can make some modifications in terms of content, encrypting style, or bypass techniques).  
+
+All commands invoked (including variable and function declarations) will be retained in the session because we operate within a single Runspace from start to finish.All you need to do is encode the PowerShell payload and assign it to a variable → decode it → pass it into the AddScript function → call Invoke().In this case, if the payload is too long, I recommend splitting the original PowerShell script and concatenating it as a string in C#. Then, add each part to AddScript one by one to debug and avoid AV deleting our string if it’s too long (for example, McAfee 🤡).  
+
+Oh, a quick note about the AMSI bypass method—during testing, I found that patching the value of AmsiContext tends to be more stable than the previously mentioned AmsiScanBuffer when dealing with security protections. You can use the following command to achieve this:
+```
+$g=([Ref].Assembly.GetTypes() | ForEach-Object{$_.GetFields('NonPublic,Static') | ForEach-Object {$_ | where-object {$_.Name -like "*iContext"}}}).GetValue($null);
+[IntPtr]$ptr=$g;
+[Int32[]]$buf=@(0);
+$t = "S"+"y"+"s"+"t"+"em"+"."+"R"+"u"+"n"+"t"+"i"+"m"+"e"+"."+"I"+"n"+"t"+"e"+"r"+"o"+"p"+"S"+"e"+"r"+"v"+"i"+"c"+"e"+"s"+"."+"M"+"a"+"r"+"s"+"h"+"a"+"l";
+[Type]::GetType($t)::Copy($buf, 0, $ptr, 1);
+```
+Note: You should invoke the patch before invoking the payload.  
+
+Everything has been provided in the Resource. Below is a chain summarizing everything we have done:
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5ffeb23e-5e1b-41ba-8a09-935af73f97cf">
 </p>
-
 <p align="center"> 
 <span style="font-size:30px;">Full-Chain!</span>
 </p>  
